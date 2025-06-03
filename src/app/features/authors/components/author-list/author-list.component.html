@@ -1,0 +1,22 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-title class="text-xl font-semibold">Authors</ion-title>
+		<ion-buttons slot="end">
+			<ion-button routerLink="/authors/new" class="text-primary">
+				<ion-icon name="add" class="text-2xl"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-list class="divide-y divide-gray-200">
+		<ion-item *ngFor="let author of authors" [routerLink]="['/authors', author.id]"
+			class="hover:bg-gray-50 cursor-pointer">
+			<ion-label>
+				<h2 class="text-lg font-medium text-gray-900">{{ author.name }}</h2>
+				<p class="text-sm text-gray-500">{{ author.books.length }} books</p>
+			</ion-label>
+		</ion-item>
+	</ion-list>
+</ion-content>

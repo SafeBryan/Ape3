@@ -1,0 +1,40 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button defaultHref="/categories"></ion-back-button>
+		</ion-buttons>
+		<ion-title class="text-xl font-semibold">Category Details</ion-title>
+		<ion-buttons slot="end">
+			<ion-button [routerLink]="['/categories', category?.id, 'edit']" class="text-primary">
+				<ion-icon name="create" class="text-2xl"></ion-icon>
+			</ion-button>
+			<ion-button (click)="deleteCategory()" class="text-red-600">
+				<ion-icon name="trash" class="text-2xl"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="category" class="p-4">
+	<ion-card class="shadow-lg rounded-lg">
+		<ion-card-header class="p-4">
+			<ion-card-title class="text-2xl font-bold text-gray-900">{{ category.name }}</ion-card-title>
+			<ion-card-subtitle class="text-lg text-gray-600 mt-2">{{ books.length }} books</ion-card-subtitle>
+		</ion-card-header>
+
+		<ion-card-content class="p-4">
+			<ion-list class="divide-y divide-gray-200">
+				<ion-item *ngFor="let book of books" [routerLink]="['/books', book.id]"
+					class="hover:bg-gray-50 cursor-pointer">
+					<ion-label>
+						<h2 class="text-lg font-medium text-gray-900">{{ book.name }}</h2>
+						<p class="text-sm text-gray-500">{{ getAuthorNames(book) }}</p>
+					</ion-label>
+					<ion-note slot="end" class="text-lg font-medium text-gray-900">
+						{{ book.price | currency }}
+					</ion-note>
+				</ion-item>
+			</ion-list>
+		</ion-card-content>
+	</ion-card>
+</ion-content>

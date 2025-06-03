@@ -1,0 +1,23 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button defaultHref="/categories"></ion-back-button>
+		</ion-buttons>
+		<ion-title class="text-xl font-semibold">{{ isEditMode ? 'Edit Category' : 'New Category' }}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<form [formGroup]="categoryForm" (ngSubmit)="onSubmit()" class="p-4 space-y-4">
+		<ion-item class="mb-4">
+			<ion-label position="stacked" class="text-gray-700">Name</ion-label>
+			<ion-input formControlName="name" type="text" class="w-full"></ion-input>
+		</ion-item>
+
+		<div class="p-4">
+			<ion-button expand="block" type="submit" [disabled]="!categoryForm.valid" class="w-full">
+				{{ isEditMode ? 'Update' : 'Create' }}
+			</ion-button>
+		</div>
+	</form>
+</ion-content>

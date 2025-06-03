@@ -1,0 +1,66 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button defaultHref="/books"></ion-back-button>
+		</ion-buttons>
+		<ion-title class="text-xl font-semibold">Book Details</ion-title>
+		<ion-buttons slot="end">
+			<ion-button [routerLink]="['/books', book?.id, 'edit']" class="text-primary">
+				<ion-icon name="create" class="text-2xl"></ion-icon>
+			</ion-button>
+			<ion-button (click)="deleteBook()" class="text-red-600">
+				<ion-icon name="trash" class="text-2xl"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="book" class="p-4">
+	<ion-card class="shadow-lg rounded-lg">
+		<ion-card-header class="p-4">
+			<ion-card-title class="text-2xl font-bold text-gray-900">{{ book.name }}</ion-card-title>
+			<ion-card-subtitle class="text-lg text-gray-600 mt-2">
+				By {{ getAuthorNames() }}
+			</ion-card-subtitle>
+		</ion-card-header>
+
+		<ion-card-content class="p-4">
+			<ion-list class="divide-y divide-gray-200">
+				<ion-item class="py-4">
+					<ion-label>
+						<h3 class="text-lg font-medium text-gray-900">Categories</h3>
+						<p class="text-gray-600">{{ getCategoryNames() }}</p>
+					</ion-label>
+				</ion-item>
+
+				<ion-item class="py-4">
+					<ion-label>
+						<h3 class="text-lg font-medium text-gray-900">Price</h3>
+						<p class="text-gray-600">{{ book.price | currency }}</p>
+					</ion-label>
+				</ion-item>
+
+				<ion-item class="py-4">
+					<ion-label>
+						<h3 class="text-lg font-medium text-gray-900">Release Date</h3>
+						<p class="text-gray-600">{{ book.releaseDate | date }}</p>
+					</ion-label>
+				</ion-item>
+
+				<ion-item class="py-4">
+					<ion-label>
+						<h3 class="text-lg font-medium text-gray-900">Page Count</h3>
+						<p class="text-gray-600">{{ book.pageCount }} pages</p>
+					</ion-label>
+				</ion-item>
+
+				<ion-item class="py-4">
+					<ion-label>
+						<h3 class="text-lg font-medium text-gray-900">Publisher</h3>
+						<p class="text-gray-600">{{ book.publisher }}</p>
+					</ion-label>
+				</ion-item>
+			</ion-list>
+		</ion-card-content>
+	</ion-card>
+</ion-content>
