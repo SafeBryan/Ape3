@@ -3,7 +3,7 @@
 		<ion-buttons slot="start">
 			<ion-back-button defaultHref="/authors"></ion-back-button>
 		</ion-buttons>
-		<ion-title>Author Details</ion-title>
+		<ion-title>Detalles del Autor</ion-title>
 		<ion-buttons slot="end">
 			<ion-button [routerLink]="['/authors', author?.id, 'edit']">
 				<ion-icon name="create"></ion-icon>
@@ -19,7 +19,7 @@
 	<ion-card>
 		<ion-card-header>
 			<ion-card-title>{{ author.name }}</ion-card-title>
-			<ion-card-subtitle>{{ author.books.length }} books</ion-card-subtitle>
+			<ion-card-subtitle>{{ author.books.length }} libros</ion-card-subtitle>
 		</ion-card-header>
 
 		<ion-card-content>

@@ -3,20 +3,20 @@
 		<ion-buttons slot="start">
 			<ion-back-button defaultHref="/authors"></ion-back-button>
 		</ion-buttons>
-		<ion-title>{{ isEditMode ? 'Edit Author' : 'New Author' }}</ion-title>
+		<ion-title>{{ isEditMode ? 'Editar Autor' : 'Nuevo Autor' }}</ion-title>
 	</ion-toolbar>
 </ion-header>
 
 <ion-content>
 	<form [formGroup]="authorForm" (ngSubmit)="onSubmit()" class="p-4">
 		<ion-item class="mb-4">
-			<ion-label position="stacked" class="text-gray-700">Name</ion-label>
+			<ion-label position="stacked" class="text-gray-700">Nombre</ion-label>
 			<ion-input formControlName="name" type="text" class="w-full"></ion-input>
 		</ion-item>
 
 		<div class="p-4">
 			<ion-button expand="block" type="submit" [disabled]="!authorForm.valid" class="w-full">
-				{{ isEditMode ? 'Update' : 'Create' }}
+				{{ isEditMode ? 'Actualizar' : 'Crear' }}
 			</ion-button>
 		</div>
 	</form>

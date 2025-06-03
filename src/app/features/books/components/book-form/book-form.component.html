@@ -3,19 +3,19 @@
 		<ion-buttons slot="start">
 			<ion-back-button defaultHref="/books"></ion-back-button>
 		</ion-buttons>
-		<ion-title class="text-xl font-semibold">{{ isEditMode ? 'Edit Book' : 'New Book' }}</ion-title>
+		<ion-title class="text-xl font-semibold">{{ isEditMode ? 'Editar Libro' : 'Nuevo Libro' }}</ion-title>
 	</ion-toolbar>
 </ion-header>
 
 <ion-content>
 	<form [formGroup]="bookForm" (ngSubmit)="onSubmit()" class="p-4 space-y-4">
 		<ion-item class="mb-4">
-			<ion-label position="stacked" class="text-gray-700">Name</ion-label>
+			<ion-label position="stacked" class="text-gray-700">Nombre</ion-label>
 			<ion-input formControlName="name" type="text" class="w-full"></ion-input>
 		</ion-item>
 
 		<ion-item class="mb-4">
-			<ion-label position="stacked" class="text-gray-700">Authors</ion-label>
+			<ion-label position="stacked" class="text-gray-700">Autores</ion-label>
 			<ion-select formControlName="authors" multiple="true" class="w-full">
 				<ion-select-option *ngFor="let author of authors" [value]="author">
 					{{ author.name }}
@@ -24,7 +24,7 @@
 		</ion-item>
 
 		<ion-item class="mb-4">
-			<ion-label position="stacked" class="text-gray-700">Categories</ion-label>
+			<ion-label position="stacked" class="text-gray-700">Categorías</ion-label>
 			<ion-select formControlName="categories" multiple="true" class="w-full">
 				<ion-select-option *ngFor="let category of categories" [value]="category">
 					{{ category.name }}
@@ -33,28 +33,28 @@
 		</ion-item>
 
 		<ion-item class="mb-4">
-			<ion-label position="stacked" class="text-gray-700">Price</ion-label>
+			<ion-label position="stacked" class="text-gray-700">Precio</ion-label>
 			<ion-input formControlName="price" type="number" class="w-full"></ion-input>
 		</ion-item>
 
 		<ion-item class="mb-4">
-			<ion-label position="stacked" class="text-gray-700">Release Date</ion-label>
+			<ion-label position="stacked" class="text-gray-700">Fecha de Lanzamiento</ion-label>
 			<ion-datetime formControlName="releaseDate" class="w-full"></ion-datetime>
 		</ion-item>
 
 		<ion-item class="mb-4">
-			<ion-label position="stacked" class="text-gray-700">Page Count</ion-label>
+			<ion-label position="stacked" class="text-gray-700">Número de Páginas</ion-label>
 			<ion-input formControlName="pageCount" type="number" class="w-full"></ion-input>
 		</ion-item>
 
 		<ion-item class="mb-4">
-			<ion-label position="stacked" class="text-gray-700">Publisher</ion-label>
+			<ion-label position="stacked" class="text-gray-700">Editorial</ion-label>
 			<ion-input formControlName="publisher" type="text" class="w-full"></ion-input>
 		</ion-item>
 
 		<div class="p-4">
 			<ion-button expand="block" type="submit" [disabled]="!bookForm.valid" class="w-full">
-				{{ isEditMode ? 'Update' : 'Create' }}
+				{{ isEditMode ? 'Actualizar' : 'Crear' }}
 			</ion-button>
 		</div>
 	</form>

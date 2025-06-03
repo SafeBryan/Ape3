@@ -3,7 +3,7 @@
 		<ion-buttons slot="start">
 			<ion-back-button defaultHref="/categories"></ion-back-button>
 		</ion-buttons>
-		<ion-title class="text-xl font-semibold">Category Details</ion-title>
+		<ion-title class="text-xl font-semibold">Detalles de la Categoría</ion-title>
 		<ion-buttons slot="end">
 			<ion-button [routerLink]="['/categories', category?.id, 'edit']" class="text-primary">
 				<ion-icon name="create" class="text-2xl"></ion-icon>
@@ -19,7 +19,7 @@
 	<ion-card class="shadow-lg rounded-lg">
 		<ion-card-header class="p-4">
 			<ion-card-title class="text-2xl font-bold text-gray-900">{{ category.name }}</ion-card-title>
-			<ion-card-subtitle class="text-lg text-gray-600 mt-2">{{ books.length }} books</ion-card-subtitle>
+			<ion-card-subtitle class="text-lg text-gray-600 mt-2">{{ books.length }} libros</ion-card-subtitle>
 		</ion-card-header>
 
 		<ion-card-content class="p-4">
