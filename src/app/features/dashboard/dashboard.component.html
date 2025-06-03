@@ -1,0 +1,47 @@
+<ion-content>
+	<ion-header>
+		<ion-toolbar>
+			<ion-title>Dashboard</ion-title>
+		</ion-toolbar>
+	</ion-header>
+
+	<ion-grid>
+		<ion-row>
+			<ion-col size="12" sizeMd="4">
+				<ion-card [routerLink]="['/books']" class="ion-activatable">
+					<ion-card-header>
+						<ion-card-title>Books</ion-card-title>
+					</ion-card-header>
+					<ion-card-content>
+						Manage your book collection
+					</ion-card-content>
+					<ion-ripple-effect></ion-ripple-effect>
+				</ion-card>
+			</ion-col>
+
+			<ion-col size="12" sizeMd="4">
+				<ion-card [routerLink]="['/authors']" class="ion-activatable">
+					<ion-card-header>
+						<ion-card-title>Authors</ion-card-title>
+					</ion-card-header>
+					<ion-card-content>
+						Manage authors information
+					</ion-card-content>
+					<ion-ripple-effect></ion-ripple-effect>
+				</ion-card>
+			</ion-col>
+
+			<ion-col size="12" sizeMd="4">
+				<ion-card [routerLink]="['/categories']" class="ion-activatable">
+					<ion-card-header>
+						<ion-card-title>Categories</ion-card-title>
+					</ion-card-header>
+					<ion-card-content>
+						Organize your books by categories
+					</ion-card-content>
+					<ion-ripple-effect></ion-ripple-effect>
+				</ion-card>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>
