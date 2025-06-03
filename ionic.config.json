@@ -1,0 +1,7 @@
+{
+  "name": "Ape3",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
